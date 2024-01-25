@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Map } from 'leaflet';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OSM_17B';
+
+  constructor( private map: Map, private zoom: Number){}
+  
+  receiveMap(map: Map) {
+    this.map = map;
+  }
+
+  receiveZoom(zoom: Number) {
+    this.zoom = zoom;
+  }
 }
